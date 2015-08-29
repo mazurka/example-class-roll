@@ -10,4 +10,8 @@ defmodule ClassRoll.Service.Date do
   def list_by_member(class_id, member_id) do
     {:ok, 1..15}
   end
+
+  def create(class_id, date) do
+    {:ok, %{id: 1524, date: "2015-08-22T07:18:52Z"}}
+  end
 end

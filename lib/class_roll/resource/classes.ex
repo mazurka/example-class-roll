@@ -8,7 +8,8 @@ defmodule ClassRoll.Resource.Classes do
       %{
         "collection" => for class <- classes do
           link_to(ClassRoll.Resource.Classes.Read, class: class)
-        end
+        end,
+        "create" => link_to(ClassRoll.Resource.Classes.Create),
       }
     end
   end

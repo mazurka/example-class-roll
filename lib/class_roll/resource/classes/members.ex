@@ -12,7 +12,8 @@ defmodule ClassRoll.Resource.Classes.Members do
       %{
         "collection" => for member <- members do
           link_to(ClassRoll.Resource.Members.Read, member: member)
-        end
+        end,
+        "create" => link_to(ClassRoll.Resource.Classes.Members.Create, class: class)
       }
     end
   end

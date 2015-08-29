@@ -12,7 +12,8 @@ defmodule ClassRoll.Resource.Classes.Dates do
       %{
         "collection" => for date <- dates do
           link_to(ClassRoll.Resource.Classes.Dates.Read, class: class, date: date)
-        end
+        end,
+        "create" => link_to(ClassRoll.Resource.Classes.Dates.Create, class: class)
       }
     end
   end
