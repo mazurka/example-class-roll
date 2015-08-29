@@ -9,3 +9,7 @@ config :logger, :console,
 config :lager,
   error_logger_redirect: false,
   handlers: []
+
+config :class_roll, ClassRoll.DB.Postgres,
+  adapter: Ecto.Adapters.Postgres,
+  url: {:system, "DATABASE_URL"}
