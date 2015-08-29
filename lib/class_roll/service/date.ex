@@ -7,7 +7,7 @@ defmodule ClassRoll.Service.Date do
     {:ok, %{id: id, date: "2015-08-22T07:18:52Z"}}
   end
 
-  def get_by_attendee(id) do
+  def list_by_member(class_id, member_id) do
     {:ok, 1..15}
   end
 end

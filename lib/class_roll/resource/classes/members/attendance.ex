@@ -1,15 +1,15 @@
-defmodule ClassRoll.Resource.Classes.Attendees.Attendance do
+defmodule ClassRoll.Resource.Classes.Members.Attendance do
   use Mazurka.Resource
 
-  param attendee do
-    Attendee.get(value)
+  param member do
+    Member.get(value)
   end
 
   param class do
     Class.get(value)
   end
 
-  let dates = Date.get_by_attendee(attendee.id)
+  let dates = Date.list_by_member(class.id, member.id)
 
   mediatype Mazurka.Mediatype.Hyperjson do
     action do

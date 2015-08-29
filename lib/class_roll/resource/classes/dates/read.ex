@@ -9,15 +9,15 @@ defmodule ClassRoll.Resource.Classes.Dates.Read do
     Date.get(value)
   end
 
-  let attendees = Attendee.list(class.id, date.id)
+  let members = Member.list_by_class(class.id, date.id)
 
   mediatype Mazurka.Mediatype.Hyperjson do
     action do
       %{
         "date" => date.date,
         "class" => link_to(ClassRoll.Resource.Classes.Read, class: class),
-        "collection" => for attendee <- attendees do
-          # link_to(ClassRoll.Resource.Classes.Dates.Attendee, class: class, date: date, attendee: attendee)
+        "members" => for member <- members do
+          link_to(ClassRoll.Resource.Classes.Dates.Attendance, class: class, date: date, member: member)
         end
       }
     end
