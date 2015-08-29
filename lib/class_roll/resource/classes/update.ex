@@ -1,4 +1,4 @@
-defmodule ClassRoll.Resource.Classes.Dates.Create do
+defmodule ClassRoll.Resource.Classes.Update do
   use Mazurka.Resource
 
   param class do
@@ -7,14 +7,15 @@ defmodule ClassRoll.Resource.Classes.Dates.Create do
 
   mediatype Mazurka.Mediatype.Hyperjson do
     action do
-      date = Date.create(class, Input.get("date"))
-      transition_to(ClassRoll.Resource.Classes.Dates.Read, class: class, date: date)
+      class = Class.update(class, %{name: Input.get("name")})
+      transition_to(ClassRoll.Resource.Classes.Read, class: class)
     end
+
     affordance do
       %{
         "input" => %{
-          "date" => %{
-            "type" => "date",
+          "name" => %{
+            "type" => "text",
             "required" => true
           }
         }

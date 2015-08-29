@@ -7,7 +7,7 @@ defmodule ClassRoll.Service.Class do
     {:ok, %{id: id, name: "foobar"}}
   end
 
-  def list_by_member(id) do
+  def list_by_member(member) do
     {:ok, 1..4}
   end
 
@@ -15,7 +15,11 @@ defmodule ClassRoll.Service.Class do
     {:ok, %{id: 134}}
   end
 
-  def associate(class_id, member_id) do
+  def associate(class, member) do
+    {:ok, true}
+  end
+
+  def update(class, params) do
     {:ok, true}
   end
 end

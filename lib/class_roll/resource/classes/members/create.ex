@@ -5,15 +5,17 @@ defmodule ClassRoll.Resource.Classes.Members.Create do
     Class.get(value)
   end
 
-  let members = Member.list_outside_of_class(class.id)
+  let members = Member.list_outside_of_class(class)
 
   mediatype Mazurka.Mediatype.Hyperjson do
     action do
-      if Input.get("member") do
-        Class.associate(class.id, Input.get("member"))
+      member = if Input.get("member") do
+        Input.get("member")
+        |> Member.get()
       else
-        member = Member.create(%{name: Input.get("name")})
+        Member.create(%{name: Input.get("name")})
       end
+      Class.associate(class, member)
       transition_to(ClassRoll.Resource.Classes.Members, class: class)
     end
 

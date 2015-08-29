@@ -5,7 +5,7 @@ defmodule ClassRoll.Resource.Members.Classes do
     Member.get(value)
   end
 
-  let classes = Class.list_by_member(member.id)
+  let classes = Class.list_by_member(member)
 
   mediatype Mazurka.Mediatype.Hyperjson do
     action do

@@ -13,7 +13,7 @@ defmodule ClassRoll.Resource.Classes.Dates.Attendance do
     Member.get(value)
   end
 
-  let attendance = Attendance.get(class.id, date.id, member.id)
+  let attendance = Attendance.get(class, date, member)
 
   mediatype Mazurka.Mediatype.Hyperjson do
     action do

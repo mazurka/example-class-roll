@@ -10,7 +10,8 @@ defmodule ClassRoll.Resource.Classes.Read do
       %{
         "name" => class.name,
         "dates" => link_to(ClassRoll.Resource.Classes.Dates, class: class),
-        "members" => link_to(ClassRoll.Resource.Classes.Members, class: class)
+        "members" => link_to(ClassRoll.Resource.Classes.Members, class: class),
+        "update" => link_to(ClassRoll.Resource.Classes.Update, class: class),
       }
     end
   end

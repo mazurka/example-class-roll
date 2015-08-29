@@ -13,7 +13,8 @@ defmodule ClassRoll.Resource.Members.Read do
     action do
       %{
         "name" => member.name,
-        "classes" => link_to(ClassRoll.Resource.Members.Classes, member: member)
+        "classes" => link_to(ClassRoll.Resource.Members.Classes, member: member),
+        "update" => link_to(ClassRoll.Resource.Members.Update, member: member),
       }
     end
   end

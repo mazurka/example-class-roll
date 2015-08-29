@@ -5,7 +5,7 @@ defmodule ClassRoll.Resource.Classes.Dates do
     Class.get(value)
   end
 
-  let dates = Date.list(class.id)
+  let dates = Date.list(class)
 
   mediatype Mazurka.Mediatype.Hyperjson do
     action do

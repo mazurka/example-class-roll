@@ -9,7 +9,7 @@ defmodule ClassRoll.Resource.Classes.Dates.Read do
     Date.get(value)
   end
 
-  let members = Member.list_by_class(class.id, date.id)
+  let members = Member.list_by_class(class, date)
 
   mediatype Mazurka.Mediatype.Hyperjson do
     action do
