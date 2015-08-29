@@ -1,4 +1,10 @@
 defmodule ClassRoll.Service.Class do
+  use Mazurka.Model
+
+  schema "classes" do
+    field     :name,    :string
+  end
+
   def list do
     {:ok, 1..15}
   end
