@@ -19,5 +19,6 @@ defmodule ClassRoll.Protocol.HTTP.Router do
   get     "/classes/:class/dates/:date",                        ClassRoll.Resource.Classes.Dates.Read
   get     "/classes/:class/dates/:date/members/:member",        ClassRoll.Resource.Classes.Dates.Attendance
   get     "/members/:member",                                   ClassRoll.Resource.Members.Read
+  get     "/members/:member/classes",                           ClassRoll.Resource.Members.Classes
   match   _,                                                    ClassRoll.Resource.Error.NotFound
 end
