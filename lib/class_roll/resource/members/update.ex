@@ -7,7 +7,7 @@ defmodule ClassRoll.Resource.Members.Update do
 
   mediatype Mazurka.Mediatype.Hyperjson do
     action do
-      member = Member.create(%{name: Input.get("name")})
+      Member.create(%{name: Input.get("name")})
       transition_to(ClassRoll.Resource.Members.Read, member: member)
     end
 

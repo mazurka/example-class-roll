@@ -7,7 +7,7 @@ defmodule ClassRoll.Resource.Classes.Update do
 
   mediatype Mazurka.Mediatype.Hyperjson do
     action do
-      class = Class.update(class, %{name: Input.get("name")})
+      Class.update(class, %{name: Input.get("name")})
       transition_to(ClassRoll.Resource.Classes.Read, class: class)
     end
 

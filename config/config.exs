@@ -12,4 +12,4 @@ config :lager,
 
 config :class_roll, ClassRoll.DB.Postgres,
   adapter: Ecto.Adapters.Postgres,
-  url: {:system, "DATABASE_URL"}
+  url: System.get_env("DATABASE_URL")
