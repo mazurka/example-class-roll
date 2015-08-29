@@ -11,6 +11,7 @@ defmodule ClassRoll.Protocol.HTTP.Router do
   plug :dispatch
 
   get     "/",                          ClassRoll.Resource.Root
-
+  get     "/classes",                   ClassRoll.Resource.Classes
+  get     "/classes/:class",            ClassRoll.Resource.Classes.Read
   match   _,                            ClassRoll.Resource.Error.NotFound
 end

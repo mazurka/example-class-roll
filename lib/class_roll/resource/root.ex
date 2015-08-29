@@ -4,7 +4,7 @@ defmodule ClassRoll.Resource.Root do
   mediatype Mazurka.Mediatype.Hyperjson do
     action do
       %{
-        "greeting" => Greeting.world()
+        "classes" => link_to(ClassRoll.Resource.Classes)
       }
     end
   end
