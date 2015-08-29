@@ -8,7 +8,9 @@ defmodule ClassRoll.Resource.Classes.Read do
   mediatype Mazurka.Mediatype.Hyperjson do
     action do
       %{
-        "name" => class.name
+        "name" => class.name,
+        "dates" => link_to(ClassRoll.Resource.Classes.Dates, class: class),
+        "attendees" => link_to(ClassRoll.Resource.Classes.Attendees, class: class)
       }
     end
   end
