@@ -8,6 +8,9 @@ deps:
 	@mix deps.get
 	@mix deps.compile
 
+migrate:
+	@$(shell cat .env | grep '^#' --invert-match | xargs) mix ecto.migrate -r ClassRoll.DB.Postgres
+
 test: .env deps
 	@$(shell cat .env | grep '^#|^MIX_ENV' --invert-match | xargs) mix test
 

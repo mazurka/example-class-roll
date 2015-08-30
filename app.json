@@ -1,7 +1,9 @@
 {
   "name": "Mazurka Class Roll",
   "description": "Example application implementing a class roll",
-  "scripts": {},
+  "scripts": {
+    "postdeploy": "mix ecto.migrate -r ClassRoll.DB.Postgres"
+  },
   "env": {
     "BUILDPACK_URL": "https://github.com/ddollar/heroku-buildpack-multi",
     "MIX_ENV": "prod"
