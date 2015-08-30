@@ -7,7 +7,7 @@ defmodule ClassRoll.Supervisor do
   end
 
   def init(_) do
-    processes = []
+    processes = [worker(ClassRoll.DB.Postgres, [])]
     {:ok, { {:one_for_one, 10, 10}, processes} }
   end
 end

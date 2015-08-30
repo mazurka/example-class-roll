@@ -5,7 +5,7 @@
   "edown": {:git, "git://github.com/uwiger/edown.git", "b7c8eb0ac1859f8fce11cbfe3526f5ec83194776", [tag: "0.7"]},
   "etude": {:hex, :etude, "0.3.2"},
   "lineo": {:hex, :lineo, "0.1.0"},
-  "mazurka": {:hex, :mazurka, "0.3.6"},
+  "mazurka": {:git, "git://github.com/mazurka/mazurka.git", "f0e27a36ec7ead61cf9ac1aae5745a43db2d20f2", []},
   "mimetype_parser": {:hex, :mimetype_parser, "0.1.0"},
   "parse_trans": {:git, "git://github.com/uwiger/parse_trans.git", "a210adafdfbb904d156d8f22abd5fb58fc17de1e", []},
   "plug": {:hex, :plug, "0.13.1"},
