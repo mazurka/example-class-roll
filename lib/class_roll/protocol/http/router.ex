@@ -8,6 +8,9 @@ defmodule ClassRoll.Protocol.HTTP.Router do
     use Plug.Debugger
     plug Plug.Logger
   end
+  plug Plug.Parsers, parsers: [Plug.Parsers.JSON,
+                               Plug.Parsers.URLENCODED],
+                     json_decoder: Poison
   plug :dispatch
 
   get     "/",                                                  ClassRoll.Resource.Root
